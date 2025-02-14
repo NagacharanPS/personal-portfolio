@@ -1,3 +1,5 @@
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import HamburgerNav from "./components/hamburger-nav";
 import WelcomeModal from "./components/WelcomeModal";
 import Header from "./components/header";
@@ -12,6 +14,7 @@ import Footer from "./components/footer";
 function App() {
   return (
     <>
+      <ToastContainer />
       <WelcomeModal />
       <HamburgerNav />
       <Header />

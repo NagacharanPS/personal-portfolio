@@ -1,8 +1,53 @@
+import { useState } from "react";
+import axios from "axios";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import email from "../assets/email.png";
 import linkedin from "../assets/linkedin.png";
 import github from "../assets/github.png";
 import instagram from "../assets/instagram.png";
 function Contact() {
+  const [data, setData] = useState({
+    text: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!data.text.trim()) {
+      toast.error("Please Enter feedback", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    axios
+      .post("http://localhost:7777/", {
+        message: data.text,
+      })
+      .then((res) => {
+        console.log("Feedback submitted:", res.data);
+        toast.success("Feedback Submitted..", {
+          position: "top-center",
+        });
+      })
+      .catch((err) => {
+        if (err.response.status === 500) {
+          console.error("Error submitting the feedback:", err);
+          toast.error("Feedback Submission Failed, Please Try Again..", {
+            position: "top-center",
+          });
+        }
+      });
+  };
   return (
     <section id="contact">
       <h1>Contact Me</h1>
@@ -29,6 +74,18 @@ function Contact() {
           />
           <img src={instagram} alt="linkedin-icon" />
         </div>
+      </div>
+      <div className="form-container">
+        <form onSubmit={handleSubmit}>
+          <textarea
+            type="text"
+            placeholder="Enter your message"
+            name="text"
+            value={data.text} // Use correct state key
+            onChange={handleChange}
+          />
+          <button type="submit">Send</button>
+        </form>
       </div>
     </section>
   );
