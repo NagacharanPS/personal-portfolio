@@ -68,3 +68,33 @@
   transform: scale(1.05);
   transition: all 0.3s ease-in-out;
 }
+
+.feedback-form-container {
+  margin-top: 20px;
+}
+
+.feedback-form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-form-container form textarea {
+  border-radius: 10px;
+  padding: 10px;
+  background-color: rgb(218, 215, 215);
+}
+
+.feedback-form-container form button {
+  margin-top: 10px;
+  padding: 7px 5px;
+  width: auto;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  background-color: green;
+  color: white;
+}
+
+.feedback-form-container form button:hover {
+  background-color: rgb(5, 97, 5);
+}

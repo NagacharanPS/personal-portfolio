@@ -30,7 +30,7 @@ function Contact() {
     }
 
     axios
-      .post("http://localhost:7777/", {
+      .post("https://personal-portfolio-server-1.onrender.com/", {
         message: data.text,
       })
       .then((res) => {
@@ -40,9 +40,18 @@ function Contact() {
         });
       })
       .catch((err) => {
-        if (err.response.status === 500) {
-          console.error("Error submitting the feedback:", err);
-          toast.error("Feedback Submission Failed, Please Try Again..", {
+        console.error("Error submitting the feedback:", err);
+
+        if (err.response) {
+          // If response exists, check status
+          if (err.response.status === 500) {
+            toast.error("Feedback Submission Failed, Please Try Again..", {
+              position: "top-center",
+            });
+          }
+        } else {
+          // Handle generic network errors
+          toast.error("Network error! Please check your connection.", {
             position: "top-center",
           });
         }
@@ -75,16 +84,18 @@ function Contact() {
           <img src={instagram} alt="linkedin-icon" />
         </div>
       </div>
-      <div className="form-container">
+      <div className="feedback-form-container">
         <form onSubmit={handleSubmit}>
           <textarea
+            cols="30"
+            rows="5"
             type="text"
-            placeholder="Enter your message"
+            placeholder="Type your feedback"
             name="text"
             value={data.text} // Use correct state key
             onChange={handleChange}
           />
-          <button type="submit">Send</button>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </section>

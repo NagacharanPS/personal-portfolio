@@ -4,8 +4,21 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 
 const app = express();
+
+const allowedOrigins = [
+  "https://nagacharanps-portfolio-website.netlify.app",
+  "http://localhost:3000",
+];
+
+app.use(
+  cors({
+    origin: allowedOrigins,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
+
 app.use(express.json());
-app.use(cors());
 
 const transporter = nodemailer.createTransport({
   service: "gmail",

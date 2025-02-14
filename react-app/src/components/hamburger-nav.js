@@ -17,7 +17,7 @@ function HamburgerNav() {
           <span></span>
           <span></span>
         </div>
-        <div class={`menu-links ${menuOpen ? "open" : ""}`}>
+        <div className={`menu-links ${menuOpen ? "open" : ""}`}>
           <ul>
             <li>
               <a href="#about" onClick={toggleMenu}>
