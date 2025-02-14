@@ -8,6 +8,7 @@ const app = express();
 const allowedOrigins = [
   "https://nagacharanps-portfolio-website.netlify.app",
   "http://localhost:3000",
+  "http://localhost:3001",
 ];
 
 app.use(

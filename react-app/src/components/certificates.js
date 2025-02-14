@@ -8,6 +8,7 @@ import reactCertificate from "../certificates/React.js-certificate-linkedin-1.pn
 import nodeCertificate from "../certificates/Node.js-certificate-linkedin-1.png";
 import gitCertificate from "../certificates/Git-certificate-linkedin-1.png";
 import sqlCertificate from "../certificates/Mysql-certificate-linkedin.png";
+import microsoftCertificate from "../certificates/Microsoft-student-ambassador-certificate-1.png";
 function Certificates() {
   const scrollRef = useRef(null);
 
@@ -43,6 +44,7 @@ function Certificates() {
           <img src={nodeCertificate} alt="node-certificate" />
           <img src={gitCertificate} alt="git-certificate" />
           <img src={sqlCertificate} alt="mysql-certificate" />
+          <img src={microsoftCertificate} alt="microsoft-certificate" />
         </div>
         <img
           src={rightArrow}

@@ -1,5 +1,5 @@
 import profileImg from "../assets/profile-1.png";
-import resume from "../assets/final-resume (1).pdf";
+import resume from "../assets/updated-resume.pdf.pdf";
 
 function Profile() {
   return (
@@ -16,9 +16,7 @@ function Profile() {
         </div>
 
         <div className="profile-btn-container">
-          <button onClick={() => window.open({ resume })}>
-            Download Resume
-          </button>
+          <button onClick={() => window.open(resume)}>Download Resume</button>
           <button onClick={() => (window.location.href = "./#contact")}>
             Contact Info
           </button>

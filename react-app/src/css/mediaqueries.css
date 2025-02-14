@@ -1,4 +1,4 @@
-/* for mobilephones (≤ 480px) */
+/* for mobilephones of screen (≤ 480px) */
 @media screen and (max-width: 480px) {
   .arrow-icon {
     display: none;
@@ -23,7 +23,6 @@
   }
 
   #profile {
-    /* width: 100%; */
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -64,8 +63,15 @@
     height: 200px;
   }
 
+  .certificates-container {
+    position: relative;
+  }
+
   .contact-container {
-    width: 70%;
+    width: 75%;
+  }
+  #footer p {
+    font-size: 10px;
   }
   .footer-nav-links li a {
     font-size: 12px;
@@ -79,12 +85,14 @@
   body {
     width: 100%;
   }
+  .profile-about-container {
+  }
   .profile-about-container h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
 
   .profile-about-container h2 {
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .about-container,
@@ -99,7 +107,7 @@
   }
 
   .contact-container {
-    width: 60%;
+    width: 65%;
   }
 }
 
