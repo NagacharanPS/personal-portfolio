@@ -1,0 +1,70 @@
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 100px;
+  text-align: center;
+}
+
+#contact p {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(94, 91, 91);
+  margin: 20px 0 10px;
+}
+
+#contact h1 {
+  font-size: 40px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid rgb(99, 97, 97);
+  border-radius: 20px;
+  width: 45%;
+  height: auto;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgb(150, 147, 147);
+}
+
+.email-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.email-container a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.email-container a:hover {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  transition: all 0.3s;
+}
+
+.socials-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.socials-container img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}

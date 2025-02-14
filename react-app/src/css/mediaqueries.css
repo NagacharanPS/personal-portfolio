@@ -1,0 +1,160 @@
+/* for mobilephones (≤ 480px) */
+@media screen and (max-width: 480px) {
+  .arrow-icon {
+    display: none;
+  }
+  body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #hamburger-nav .logo {
+    font-size: 25px;
+    margin-left: 20px;
+  }
+
+  #profile {
+    /* width: 100%; */
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+  }
+
+  .profile-pic-container {
+    width: 300px;
+    height: 300px;
+  }
+  .profile-about-container,
+  .about-container,
+  .experience-about-container,
+  .certificates-container,
+  .projects-container {
+    width: 80%;
+  }
+
+  .profile-about-container h1 {
+    font-size: 35px;
+  }
+  .profile-about-container h2 {
+    font-size: 25px;
+  }
+
+  .skills-text h3 {
+    font-size: 20px;
+  }
+
+  .skills-text h4 {
+    font-size: 14px;
+  }
+
+  .certificates-container img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-container {
+    width: 70%;
+  }
+  .footer-nav-links li a {
+    font-size: 12px;
+    margin: 5px;
+    padding: 0;
+  }
+}
+
+/* screen between (min-width: 481px) and (max-width: 600px) */
+@media screen and (min-width: 481px) and (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+  .profile-about-container h1 {
+    font-size: 35px;
+  }
+
+  .profile-about-container h2 {
+    font-size: 25px;
+  }
+
+  .about-container,
+  .experience-about-container,
+  .projects-container {
+    width: 70%;
+  }
+
+  .certificates-container img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .contact-container {
+    width: 60%;
+  }
+}
+
+/* for tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    padding-left: 26px;
+  }
+
+  #profile {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .profile-about-container {
+    width: 60%;
+  }
+
+  .skills-text h3 {
+    font-size: 17px;
+  }
+}
+
+/* for laptops */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  #desktop-nav {
+    display: none;
+  }
+  #hamburger-nav {
+    display: flex;
+    padding-left: 26px;
+  }
+
+  #profile {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+  }
+
+  .profile-about-container {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  #hamburger-nav {
+    display: none;
+  }
+
+  .profile-about-container {
+    width: 40%;
+  }
+}

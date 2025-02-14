@@ -1,0 +1,77 @@
+#certifications {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  position: relative;
+}
+
+#certifications h1 {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-bottom: 40px;
+}
+
+#certifications p {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(94, 91, 91);
+  margin-bottom: 20px;
+}
+
+.certificates-container-wrapper {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.certificates-container {
+  width: 60%;
+  height: auto;
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  display: flex;
+  gap: 30px;
+  padding: 20px;
+  border: 1px solid rgb(99, 97, 97);
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px rgb(150, 147, 147);
+
+  scroll-behavior: smooth;
+}
+
+.certificates-container img {
+  width: 350px;
+  height: 350px;
+  border: 1px solid rgb(66, 64, 64);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.certificates-container img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.right-arrow,
+.left-arrow {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.left-arrow {
+  rotate: -180deg;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  opacity: 0.7;
+}
