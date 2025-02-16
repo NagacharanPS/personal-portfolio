@@ -30,7 +30,7 @@ function About() {
         src={arrowIcon}
         alt="Arrow icon"
         class="arrow-icon"
-        onclick="location.href='#experience'"
+        onClick={() => (window.location.href = "#experience")}
       />
     </section>
   );
