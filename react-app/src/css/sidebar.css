@@ -1,0 +1,120 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sidebar - Initially Hidden */
+.side-bar {
+  width: 150px; /* Increased width for better visibility */
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -250px; /* Initially hidden */
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  z-index: 1100;
+
+  transition: right 0.3s ease-in-out;
+}
+
+.side-bar .close-container {
+  border: 1.5px solid;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.side-bar .close-container span {
+  display: block;
+  background-color: black;
+  width: 17px;
+  height: 2.5px;
+  cursor: pointer;
+  margin-right: -5px;
+}
+
+.side-bar .close-container:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+  background-color: red;
+  border: none;
+}
+
+.side-bar div span:nth-child(1) {
+  transform: rotate(45deg) translateY(4px);
+}
+
+.side-bar div span:nth-child(2) {
+  transform: rotate(-45deg) translateY(-4px);
+}
+
+.login-signup {
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-signup button {
+  background-color: black;
+  padding: 15px 30px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-signup button:hover {
+  background-color: green;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.03);
+}
+
+/* Show sidebar when active */
+.side-bar.show {
+  right: 0;
+}
+
+/* Sidebar Toggle Button */
+.side-bar-icon {
+  border: 1.3px solid black;
+  padding: 7px;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 33px;
+  right: 30px;
+  z-index: 1500; /* Higher than sidebar to ensure visibility */
+  gap: 4px;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* Sidebar Icon Bars */
+.side-bar-icon span {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: black;
+}
+
+/* Hover Effect */
+.side-bar-icon:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Modal from "./Modal";
+import Modal from "../Modals/welcome-modal";
 
 const WelcomeModal = () => {
   const [isOpen, setIsOpen] = useState(true);

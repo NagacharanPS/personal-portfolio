@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-
+import "./css/sidebar.css";
 import "./css/hamburger-nav.css";
 import "./css/header.css";
 import "./css/profile.css";
