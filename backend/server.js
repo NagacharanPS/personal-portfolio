@@ -1,57 +1,56 @@
 const express = require("express");
+const mysql = require("mysql2");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-require("dotenv").config();
 
 const app = express();
-
-const allowedOrigins = [
-  "https://nagacharanps-portfolio-website.netlify.app",
-  "http://localhost:3000",
-  "http://localhost:3001",
-];
-
-app.use(
-  cors({
-    origin: allowedOrigins,
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
-
+app.use(cors());
 app.use(express.json());
 
-const transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.EMAIL,
-    pass: process.env.PASSWORD,
-  },
+const db = mysql.createConnection({
+  host: "sql201.infinityfree.com",
+  user: "if0_38334862",
+  password: "DoZ1DJgImKT",
+  database: "if0_38334862_portfolioDatabase",
 });
 
-app.post("/", (req, res) => {
-  const { message } = req.body;
+db.connect((err) => {
+  if (err) {
+    console.error("Error connecting to database");
+  } else {
+    console.log("Connected to database");
+  }
+});
 
-  const mailOptions = {
-    from: process.env.EMAIL,
-    to: "nagacharanps987@gmail.com",
-    subject: "New Message from Portfolio Contact Form",
-    text: message,
+app.post("/signup", (req, res) => {
+  const values = {
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password,
   };
 
-  transporter.sendMail(mailOptions, (err, info) => {
-    if (err) {
-      console.error("Error sending new mail");
-      return res
-        .status(500)
-        .json({ message: "Error while sending the new mail" });
-    } else {
-      console.log("New mail sent:", info.res);
-      return res.status(200).json({ message: "New mail sent" });
+  const sql =
+    "INSERT INTO registration (Username, Email, Password) VALUES (?, ?, ?)";
+
+  db.query(
+    sql,
+    [values.username, values.email, values.password],
+    (err, results) => {
+      if (err) {
+        console.error("Error while inserting signup data into db:", err);
+        return res.status(500).json({
+          message: "Error while inserting the signup data into the db",
+        });
+      } else {
+        console.log("signup data inserted into db:", results);
+        return res
+          .status(200)
+          .json({ message: "signup data inserted successfully" });
+      }
     }
-  });
+  );
 });
 
-app.listen(7777, () => {
-  console.log("Server is running on port 7777");
+app.listen(7070, () => {
+  console.log("Listening to port 7070");
 });
