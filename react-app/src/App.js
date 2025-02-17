@@ -1,8 +1,8 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import SideBar from "./components/sidebar";
+
+import SideBar from "./components/side-bar";
 import HamburgerNav from "./components/hamburger-nav";
-import WelcomeModal from "./components/welcome-message";
 import Header from "./components/header";
 import Profile from "./components/profile";
 import About from "./components/about";
@@ -16,7 +16,6 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <WelcomeModal />
       <SideBar />
       <HamburgerNav />
       <Header />
