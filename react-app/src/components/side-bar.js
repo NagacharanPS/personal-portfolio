@@ -1,13 +1,37 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const SideBar = () => {
   const [isActive, setIsActive] = useState(false);
   const [showSideBarIcon, setShowSideBarIcon] = useState(true);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+  const [signupData, setSignupData] = useState({
+    username: "",
+    signupEmail: "",
+    signupPassword: "",
+  });
 
-  const sidebarRef = useRef(null); // Ref for the sidebar
-  const sidebarIconRef = useRef(null); // Ref for the sidebar icon
+  const handleChange = (e) => {
+    setSignupData((prevData) => ({
+      ...prevData,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios
+      .post("http://localhost:7070/signup", {
+        username: signupData.username,
+        email: signupData.signupEmail,
+        password: signupData.signupPassword,
+      })
+      .then((res) => console.log("signup data submitted:", res.data))
+      .catch((err) =>
+        console.error("Error while submitting the signup data:", err)
+      );
+  };
 
   const toggleSidebar = () => {
     setIsActive(!isActive);
@@ -35,75 +59,47 @@ const SideBar = () => {
     setIsSignupModalOpen(false);
   };
 
-  // Close sidebar when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (
-        sidebarRef.current &&
-        !sidebarRef.current.contains(event.target) && // Check if click is outside sidebar
-        sidebarIconRef.current &&
-        !sidebarIconRef.current.contains(event.target) // Check if click is outside sidebar icon
-      ) {
-        setIsActive(false);
-        setShowSideBarIcon(true);
-      }
-    };
-
-    // Add event listener to the document
-    document.addEventListener("mousedown", handleClickOutside);
-
-    // Cleanup event listener
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
-
   return (
     <>
       {showSideBarIcon && (
-        <div
-          className="side-bar-icon"
-          ref={sidebarIconRef}
-          onClick={toggleSidebar}
-        >
+        <div className="side-bar-icon" onClick={toggleSidebar}>
           <span></span>
           <span></span>
           <span></span>
         </div>
       )}
 
-      <div className={`sidebar-container ${isActive ? "open" : ""}`}>
-        <div
-          className={`side-bar ${isActive ? "show" : ""}`}
-          ref={sidebarRef} // Attach ref to the sidebar itself
-        >
-          <div className="close-container" onClick={toggleSidebar}>
-            <span></span>
-            <span></span>
-          </div>
+      {isActive && (
+        <div className={`sidebar-container ${isActive ? "open" : ""}`}>
+          <div className={`side-bar ${isActive ? "show" : ""}`}>
+            <div className="close-container" onClick={toggleSidebar}>
+              <span></span>
+              <span></span>
+            </div>
 
-          <div className="login-signup">
-            <button
-              onClick={() => {
-                handleLoginClick();
-                setIsActive(false);
-                setShowSideBarIcon(true);
-              }}
-            >
-              Login
-            </button>
-            <button
-              onClick={() => {
-                handleSignupClick();
-                setIsActive(false);
-                setShowSideBarIcon(true);
-              }}
-            >
-              Signup
-            </button>
+            <div className="login-signup">
+              <button
+                onClick={() => {
+                  handleLoginClick();
+                  setIsActive(false);
+                  setShowSideBarIcon(true);
+                }}
+              >
+                Login
+              </button>
+              <button
+                onClick={() => {
+                  handleSignupClick();
+                  setIsActive(false);
+                  setShowSideBarIcon(true);
+                }}
+              >
+                Signup
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Modal for Login Form */}
       {isLoginModalOpen && (
@@ -144,21 +140,31 @@ const SideBar = () => {
               X
             </div>
             <h1>Signup</h1>
-            <form className="signup-form">
+            <form className="signup-form" onSubmit={handleSubmit}>
               <label>Username:</label>
               <input
                 type="text"
                 placeholder="Enter Your Name"
                 name="username"
+                onChange={handleChange}
+                value={signupData.username}
               />
               <label>Email:</label>
-              <input type="email" placeholder="Enter Email" name="email" />
+              <input
+                type="email"
+                placeholder="Enter Email"
+                name="signupEmail"
+                onChange={handleChange}
+                value={signupData.signupEmail}
+              />
 
               <label>Password:</label>
               <input
                 type="password"
                 placeholder="Enter Password"
-                name="password"
+                name="signupPassword"
+                onChange={handleChange}
+                value={signupData.signupPassword}
               />
 
               <div className="show-password-container">
@@ -166,7 +172,7 @@ const SideBar = () => {
                 <label>Show Password</label>
               </div>
 
-              <button type="button" className="signup-btn">
+              <button type="submit" className="signup-btn">
                 Signup
               </button>
             </form>
