@@ -5,6 +5,12 @@
   align-items: center;
   margin-top: 100px;
   position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#certifications.visible {
+  opacity: 1;
 }
 
 #certifications h1 {
@@ -13,6 +19,21 @@
   font-weight: 600;
   white-space: nowrap;
   margin-bottom: 40px;
+  width: 0;
+  overflow: hidden;
+}
+
+.certificates-typing-visible {
+  animation: typing 6s steps(40, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 #certifications p {

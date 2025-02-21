@@ -4,7 +4,13 @@
   flex-direction: column;
   align-items: center;
   margin-top: 100px;
-  position: relative; /* position relative for arrowIcon*/
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+#about.visible {
+  opacity: 1;
 }
 
 .about-text {
@@ -33,6 +39,21 @@
   font-weight: 600;
   white-space: nowrap;
   margin-bottom: 40px;
+  width: 0;
+  overflow: hidden;
+}
+
+.typing-visible {
+  animation: typing 2s steps(30, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 .about-container li {
   margin: 10px 0;

@@ -2,17 +2,24 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: 100%;
   margin-top: 100px;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
+#contact.visible {
+  opacity: 1;
+}
 #contact p {
   font-size: 20px;
   font-weight: 600;
   color: rgb(94, 91, 91);
   margin: 20px 0 10px;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 #contact h1 {
@@ -20,6 +27,25 @@
   font-weight: 600;
   white-space: nowrap;
   margin-bottom: 40px;
+  width: 0;
+  overflow: hidden;
+}
+
+.contact-typing-visible {
+  animation: typing 5s steps(40, end) forwards;
+}
+
+.get-in-touch-typing {
+  animation: typing 3s steps(30, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .contact-container {

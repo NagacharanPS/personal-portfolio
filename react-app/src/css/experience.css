@@ -6,6 +6,12 @@
   margin-top: 100px;
   text-align: center;
   position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-in-out; /* Smooth fade-in transition */
+}
+
+#experience.visible {
+  opacity: 1;
 }
 
 .experience-text p {
@@ -20,6 +26,21 @@
   font-weight: 600;
   white-space: nowrap;
   margin-bottom: 40px;
+  width: 0;
+  overflow: hidden;
+}
+
+.typing-visible {
+  animation: typing 3s steps(30, end) forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .experience-about-container {
@@ -36,6 +57,7 @@
   margin: 10px 0;
   margin-bottom: 30px;
 }
+
 .skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -53,6 +75,9 @@
   margin-bottom: 5px;
   font-size: 30px;
   font-weight: 400;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .skills-text h4 {

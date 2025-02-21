@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import ScrollToVisible from "./scrollToVisible";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -7,6 +8,21 @@ import linkedin from "../assets/linkedin.png";
 import github from "../assets/github.png";
 import instagram from "../assets/instagram.png";
 function Contact() {
+  const [sectionVisibility, setSectionVisibility] = useState({});
+  const sectionRefs = {
+    profile: useRef(null),
+    about: useRef(null),
+    experience: useRef(null),
+    certificates: useRef(null),
+    projects: useRef(null),
+    contact: useRef(null),
+  };
+  const handleVisibilityChange = (section, isVisible) => {
+    setSectionVisibility((prev) => ({
+      ...prev,
+      [section]: isVisible,
+    }));
+  };
   const [data, setData] = useState({
     text: "",
   });
@@ -43,14 +59,12 @@ function Contact() {
         console.error("Error submitting the feedback:", err);
 
         if (err.response) {
-          // If response exists, check status
           if (err.response.status === 500) {
             toast.error("Feedback Submission Failed, Please Try Again..", {
               position: "top-center",
             });
           }
         } else {
-          // Handle generic network errors
           toast.error("Network error! Please check your connection.", {
             position: "top-center",
           });
@@ -58,8 +72,19 @@ function Contact() {
       });
   };
   return (
-    <section id="contact">
-      <h1>Contact Me</h1>
+    <section
+      id="contact"
+      ref={sectionRefs.contact}
+      className={sectionVisibility.contact ? "visible" : ""}
+    >
+      <ScrollToVisible
+        section="contact"
+        sectionRef={sectionRefs.contact}
+        onVisibilityChange={handleVisibilityChange}
+      />
+      <h1 className={sectionVisibility.contact ? "contact-typing-visible" : ""}>
+        Contact Me
+      </h1>
       <div className="contact-container">
         <div className="email-container">
           <img className="email-icon" src={email} alt="email-icon" />
@@ -67,7 +92,9 @@ function Contact() {
             nagacharanps987@gmail.com
           </a>
         </div>
-        <p>Get in Touch</p>
+        <p className={sectionVisibility.contact ? "get-in-touch-typing" : ""}>
+          Get in Touch
+        </p>
         <div className="socials-container">
           <img
             src={linkedin}

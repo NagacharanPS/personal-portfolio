@@ -1,4 +1,5 @@
-import { useRef, useState } from "react";
+import { useState, useRef } from "react";
+import ScrollToVisible from "./scrollToVisible";
 import arrowIcon from "../assets/arrow.png";
 import rightArrow from "../assets/right-arrow (1).png";
 import htmlCertificate from "../certificates/HTML-certificate-linkedin (3)-1.png";
@@ -9,8 +10,27 @@ import nodeCertificate from "../certificates/Node.js-certificate-linkedin-1.png"
 import gitCertificate from "../certificates/Git-certificate-linkedin-1.png";
 import sqlCertificate from "../certificates/Mysql-certificate-linkedin.png";
 import microsoftCertificate from "../certificates/Microsoft-student-ambassador-certificate-1.png";
+import "../css/certificate.css";
 
 function Certificates() {
+  const [sectionVisibility, setSectionVisibility] = useState({});
+
+  const sectionRefs = {
+    profile: useRef(null),
+    about: useRef(null),
+    experience: useRef(null),
+    certificates: useRef(null),
+    projects: useRef(null),
+    contact: useRef(null),
+  };
+
+  const handleVisibilityChange = (section, isVisible) => {
+    setSectionVisibility((prev) => ({
+      ...prev,
+      [section]: isVisible,
+    }));
+  };
+
   const scrollRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
   const itemsPerPage = 1;
@@ -36,9 +56,24 @@ function Certificates() {
   };
 
   return (
-    <section id="certifications">
+    <section
+      id="certifications"
+      ref={sectionRefs.certificates}
+      className={sectionVisibility.certificates ? "visible" : ""}
+    >
+      <ScrollToVisible
+        section="certificates"
+        sectionRef={sectionRefs.certificates}
+        onVisibilityChange={handleVisibilityChange}
+      />
       <p>My Certification Journey</p>
-      <h1>Certifications</h1>
+      <h1
+        className={
+          sectionVisibility.certificates ? "certificates-typing-visible" : ""
+        }
+      >
+        Certifications
+      </h1>
       <div className="certificates-container-wrapper">
         <img
           src={rightArrow}

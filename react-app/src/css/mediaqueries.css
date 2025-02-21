@@ -67,12 +67,24 @@
     position: relative;
   }
 
+  .projects-container {
+    width: 70%;
+  }
+  .project-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .project-container .image-arrow-icon {
+    transform: rotate(90deg);
+    margin-bottom: 20px;
+  }
   .contact-container {
     width: 75%;
   }
-  #footer p {
-    font-size: 10px;
-  }
+
   .footer-nav-links li a {
     font-size: 12px;
     margin: 5px;
@@ -85,8 +97,7 @@
   body {
     width: 100%;
   }
-  .profile-about-container {
-  }
+
   .profile-about-container h1 {
     font-size: 30px;
   }
@@ -133,6 +144,18 @@
 
   .skills-text h3 {
     font-size: 17px;
+  }
+
+  .project-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+  }
+
+  .project-container .image-arrow-icon {
+    transform: rotate(90deg);
+    margin-bottom: 25px;
   }
 }
 
