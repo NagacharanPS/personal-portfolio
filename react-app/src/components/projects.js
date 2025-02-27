@@ -8,10 +8,21 @@ import calculator from "../assets/calculator.png";
 import enrollment_form_1 from "../assets/enrollment-form-1.png";
 import enrollment_form_2 from "../assets/enrollment-form-2.png";
 import enrollment_form_3 from "../assets/enrollment-form-3.png";
+import crudApp from "../assets/crud-app.png";
+import VideoModal from "./videoModal";
 import "../css/project.css";
 
 function Projects() {
   const [sectionVisibility, setSectionVisibility] = useState({});
+  const [showModal, setShowModal] = useState(false);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const onClose = () => {
+    setShowModal(false);
+  };
 
   const sectionRefs = {
     profile: useRef(null),
@@ -38,6 +49,7 @@ function Projects() {
         sectionRef={sectionRefs.projects}
         onVisibilityChange={handleVisibilityChange}
       />
+      {showModal && <VideoModal onClose={onClose} onOpen={true} />}
       <p>Practical Applications of My Skills</p>
       <h1>Projects</h1>
       <div className="projects-container">
@@ -188,6 +200,7 @@ function Projects() {
             >
               Live Demo
             </button>
+            <button onClick={toggleModal}>Video</button>
           </div>
           <img
             src={imageArrowIcon}
@@ -219,6 +232,53 @@ function Projects() {
               <li>
                 Added comprehensive <strong>error validation</strong> to ensure
                 accurate and secure user input.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="project-container">
+          <div className="project-img-container">
+            <img src={crudApp} alt="crud-app" />
+
+            <h2>Project Four</h2>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://github.com/NagacharanPS/Language-class-enrollment-form"
+                )
+              }
+            >
+              Github
+            </button>
+            <button
+              onClick={() =>
+                window.open(
+                  "https://language-class-enrollment-form.netlify.app/"
+                )
+              }
+            >
+              Live Demo
+            </button>
+            <button>Video</button>
+          </div>
+          <img
+            src={imageArrowIcon}
+            alt="arrow-icon"
+            className="image-arrow-icon"
+          />
+          <div className="project-details-container">
+            <ul>
+              <li>
+                Built using{" "}
+                <strong>
+                  React for the frontend, Node.js and Express.js for backend,
+                  MySQL as a database
+                </strong>
+                , ensuring a dynamic and responsive user experience.
+              </li>
+              <li>
+                User can{" "}
+                <strong>Create, Edit, Delete and View the details.</strong>.
               </li>
             </ul>
           </div>

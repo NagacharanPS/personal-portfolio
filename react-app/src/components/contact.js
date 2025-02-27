@@ -7,6 +7,7 @@ import email from "../assets/email.png";
 import linkedin from "../assets/linkedin.png";
 import github from "../assets/github.png";
 import instagram from "../assets/instagram.png";
+
 function Contact() {
   const [sectionVisibility, setSectionVisibility] = useState({});
   const sectionRefs = {
@@ -108,7 +109,13 @@ function Contact() {
             alt="linkedin-icon"
             onClick={() => window.open("https://github.com/NagacharanPS")}
           />
-          <img src={instagram} alt="linkedin-icon" />
+          <img
+            src={instagram}
+            alt="linkedin-icon"
+            onClick={() =>
+              window.open("https://www.instagram.com/naga_charan_ps/")
+            }
+          />
         </div>
       </div>
       <div className="feedback-form-container">

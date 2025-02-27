@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  /* opacity: 0; */
   transition: opacity 1s ease-in-out;
 }
 
@@ -86,12 +87,21 @@
   margin-right: 10px;
 }
 
-.project-img-container :last-child {
+.project-img-container button:nth-of-type(2) {
   background-color: #28a745;
 }
 
-.project-img-container :last-child:hover {
+.project-img-container button:nth-of-type(2):hover {
   background-color: #328044;
+}
+
+.project-img-container button:nth-of-type(3) {
+  background-color: blue;
+  width: 70px;
+}
+
+.project-img-container button:nth-of-type(3):hover {
+  background-color: rgb(6, 6, 234);
 }
 
 .project-img-container button:hover {

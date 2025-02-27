@@ -29,7 +29,6 @@ function Profile() {
       id="profile"
       className={sectionVisibility.profile ? "visible" : ""}
     >
-      {/* Pass the ref to ScrollToVisible */}
       <ScrollToVisible
         section="profile"
         sectionRef={sectionRefs.profile}

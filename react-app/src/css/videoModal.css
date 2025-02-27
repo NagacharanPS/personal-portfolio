@@ -1,0 +1,48 @@
+.video-overlay {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 1300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-content {
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* .video-content video {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+} */
+
+/* .video-content .video-content-close-btn {
+  position: absolute;
+  top: -30px;
+  right: -25px;
+  background-color: transparent;
+  backdrop-filter: blur(30px);
+  border: none;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+}
+
+.video-content .video-content-close-btn:hover {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.2);
+  background-color: red;
+  color: white;
+} */

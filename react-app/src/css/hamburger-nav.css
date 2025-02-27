@@ -12,11 +12,15 @@
 
 #hamburger-nav .logo {
   color: rgb(232, 225, 225);
+  font-size: 25px;
+  flex: 1;
+  text-align: left;
 }
 
 .hamburger-menu {
-  position: relative;
-  display: inline-block;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .hamburger-icon {

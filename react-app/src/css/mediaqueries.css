@@ -12,14 +12,19 @@
     display: none;
   }
   #hamburger-nav {
+    padding: 0 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   #hamburger-nav .logo {
-    font-size: 25px;
-    margin-left: 20px;
+    font-size: 20px;
+    margin-left: 15px;
+  }
+
+  .hamburger-icon {
+    margin-right: 35px;
   }
 
   #profile {
@@ -90,6 +95,18 @@
     margin: 5px;
     padding: 0;
   }
+}
+
+.video-btns-container {
+  width: 280px;
+}
+
+.video-container video {
+  width: 80%;
+}
+
+.closebtn-2 {
+  right: 15px !important;
 }
 
 /* screen between (min-width: 481px) and (max-width: 600px) */

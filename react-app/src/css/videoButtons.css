@@ -1,0 +1,55 @@
+.video-btns-container {
+  width: 500px;
+  background-color: white;
+  padding: 10px;
+  border: 1.4px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+.video-btns-container .close-1 {
+  position: absolute;
+  right: -30px;
+  top: -30px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  border: none;
+  background-color: red;
+  color: white;
+}
+
+.video-btns-container .close-1:hover {
+  background-color: rgb(230, 8, 8);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.1);
+}
+.video-btns-container div {
+  display: flex;
+}
+
+.video-btns-container div button {
+  padding: 10px 25px;
+  background-color: blue;
+  border: none;
+  border-radius: 30px;
+  color: white;
+}
+
+.video-btns-container div button:hover {
+  background-color: rgb(9, 9, 230);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
+.video-btns-container #arrow {
+  margin: 0 20px;
+}

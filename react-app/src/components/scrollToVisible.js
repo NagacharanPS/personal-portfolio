@@ -9,7 +9,7 @@ function ScrollToVisible({ sectionRef, section, onVisibilityChange }) {
       ([entry]) => {
         onVisibilityChange(section, entry.isIntersecting);
       },
-      { threshold: 0.4 }
+      { threshold: 0.2 }
     );
 
     observer.observe(target);
