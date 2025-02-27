@@ -101,6 +101,10 @@
   width: 280px;
 }
 
+.video-btns-container div button {
+  width: 100px;
+}
+
 .video-container video {
   width: 80%;
 }
@@ -173,6 +177,14 @@
   .project-container .image-arrow-icon {
     transform: rotate(90deg);
     margin-bottom: 25px;
+  }
+
+  .video-btns-container div button {
+    width: 100px;
+  }
+
+  .video-btns-container {
+    width: 400px;
   }
 }
 
