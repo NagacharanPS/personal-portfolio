@@ -95,11 +95,10 @@
     margin: 5px;
     padding: 0;
   }
-
-  .search-bar-container {
-  }
-
   .search-container {
+    position: absolute;
+    left: 18%;
+    top: 28%;
   }
 }
 

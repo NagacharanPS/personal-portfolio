@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import ToggleSwitch from "./toggleSwitch";
 import SearchSuggestions from "./searchSuggestions";
+import KebabMenu from "./kebabMenu";
 
 function HamburgerNav() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -26,7 +27,7 @@ function HamburgerNav() {
 
   return (
     <nav id="hamburger-nav" ref={menuRef}>
-      <ToggleSwitch />
+      <KebabMenu />
       <SearchSuggestions />
       <div className="hamburger-menu">
         <div
