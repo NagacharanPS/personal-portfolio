@@ -17,6 +17,11 @@
   text-align: center;
 }
 
+#dark .about-text p,
+#dark .about-text h1 {
+  color: white;
+}
+
 .about-container {
   padding: 15px 0;
   padding-right: 10px;
@@ -25,6 +30,17 @@
   line-height: 30px;
   width: 60%;
   box-shadow: 0px 0px 10px rgb(150, 147, 147);
+}
+
+#dark .about-container,
+#dark .experience-about-container,
+#dark .certificates-container,
+#dark .projects-container,
+#dark .contact-container {
+  border: 1px solid white;
+  background-color: rgb(35, 34, 34);
+  box-shadow: 0px 0px 10px white;
+  color: white;
 }
 
 .about-text p {

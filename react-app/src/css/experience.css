@@ -21,6 +21,11 @@
   margin-bottom: 20px;
 }
 
+#dark .experience-text p,
+#dark .experience-text h1 {
+  color: white;
+}
+
 .experience-text h1 {
   font-size: 40px;
   font-weight: 600;
@@ -58,11 +63,20 @@
   margin-bottom: 30px;
 }
 
+#dark .experience-about-container h2 {
+  color: white;
+}
+
 .skills {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   row-gap: 20px;
+}
+
+#dark .skills img {
+  background-color: white;
+  border-radius: 10px;
 }
 
 .skills-text {

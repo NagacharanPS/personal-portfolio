@@ -10,6 +10,12 @@
   background-color: #293aac;
 }
 
+#dark #hamburger-nav {
+  background-color: rgb(35, 34, 34);
+  box-shadow: 0px 0px 8px white;
+  color: white;
+}
+
 #hamburger-nav .logo {
   color: rgb(232, 225, 225);
   font-size: 25px;
@@ -18,9 +24,9 @@
 }
 
 .hamburger-menu {
-  flex: 1;
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
 .hamburger-icon {
@@ -50,7 +56,7 @@
   border-radius: 15px;
   background-color: transparent;
   border: 1.3px solid;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(30px);
   position: absolute;
   top: 100%;
   right: 0;
@@ -80,6 +86,10 @@
   text-decoration: none;
   /* transition: all 0.3s ease-in-out; */
 }
+
+#dark .menu-links ul li a {
+  color: white;
+}
 .menu-links a:hover {
   padding: 4px;
   border: 1.3px solid;
@@ -99,4 +109,22 @@
 
 .hamburger-icon.open span:last-child {
   transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.ham-tooltip-text {
+  position: absolute;
+  right: 30%;
+  color: black;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: aquamarine;
+  display: none;
+}
+
+.hamburger-icon:hover + .ham-tooltip-text {
+  display: block;
+}
+
+.ham-tooltip-text.close {
+  opacity: 0;
 }

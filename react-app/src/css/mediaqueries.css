@@ -95,6 +95,12 @@
     margin: 5px;
     padding: 0;
   }
+
+  .search-bar-container {
+  }
+
+  .search-container {
+  }
 }
 
 .video-btns-container {
@@ -185,6 +191,10 @@
 
   .video-btns-container {
     width: 400px;
+  }
+
+  .search-bar-container {
+    display: none;
   }
 }
 

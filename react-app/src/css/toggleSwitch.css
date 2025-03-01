@@ -1,0 +1,72 @@
+.toggleSwitch-container {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#dark .toggleSwitch-container p {
+  color: white;
+}
+.switch {
+  position: relative;
+  width: 36px;
+  height: 15px;
+  background-color: gray;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.slider {
+  width: 20px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  left: 4px;
+  transition: transform 0.3s ease;
+}
+
+/* .icon {
+  position: absolute;
+  right: 10px;
+  color: white;
+  font-size: 14px;
+} */
+
+.switch.active {
+  background-color: #4caf50;
+}
+
+.switch.active .slider {
+  transform: translateX(18px);
+}
+
+/* .tooltip-container {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-text {
+  width: 140px;
+  background-color: transparent;
+  color: white;
+  text-align: center;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+} */

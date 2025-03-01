@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import ScrollToVisible from "./scrollToVisible";
 import arrowIcon from "../assets/arrow.png";
 import imageArrowIcon from "../assets/green-arrow-icon.png";
@@ -32,7 +32,9 @@ function Projects() {
     projects: useRef(null),
     contact: useRef(null),
   };
+
   const handleVisibilityChange = (section, isVisible) => {
+    // console.log(`Visibility changed: ${section} is now ${isVisible}`);
     setSectionVisibility((prev) => ({
       ...prev,
       [section]: isVisible,

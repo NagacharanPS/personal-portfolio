@@ -31,6 +31,9 @@
   overflow: hidden;
 }
 
+#dark #contact h1 {
+  color: white;
+}
 .contact-typing-visible {
   animation: typing 5s steps(40, end) forwards;
 }
@@ -73,6 +76,14 @@
   margin-left: 10px;
   text-decoration: none;
   color: black;
+}
+
+#dark .email-container a {
+  color: blue;
+}
+
+#dark #contact p {
+  color: white;
 }
 
 .email-container a:hover {

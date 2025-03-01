@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const WelcomeModal = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,16 +15,28 @@ const WelcomeModal = () => {
     setIsOpen(false);
   };
 
+  const modalOverlayRef = useRef();
+
+  const handleOverlayClick = (e) => {
+    if (modalOverlayRef.current === e.target) {
+      setIsOpen(false);
+    }
+  };
+
   return (
     isOpen && (
-      <div className="modal-overlay">
+      <div
+        className="modal-overlay"
+        ref={modalOverlayRef}
+        onClick={handleOverlayClick}
+      >
         <div className="modal-content">
-          <h2>
+          <h2 className="welcome-text">
             Welcome! <span className="wave">👋</span>
           </h2>
           <p>Thank you for visiting my portfolio!</p>
           <button className="modal-close" onClick={closeModal}>
-            X
+            x
           </button>
         </div>
       </div>

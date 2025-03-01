@@ -1,0 +1,31 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.suggetions-container {
+  padding: 5px;
+  background-color: rgb(196, 191, 191);
+  margin: 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 70%;
+  width: 18%;
+  left: 25%;
+  /* z-index: 10; */
+}
+
+.suggetions-container p {
+  position: relative;
+  padding: 0 5px;
+}
+
+.suggetions-container:hover {
+  background-color: cornsilk;
+  cursor: pointer;
+}
+.arrowUpLeft {
+  position: absolute;
+  right: 0;
+  height: 20px;
+}

@@ -10,22 +10,31 @@ import Certificates from "./components/certificates";
 import Projects from "./components/projects";
 import Contact from "./components/contact";
 import Footer from "./components/footer";
+import { createContext, useState } from "react";
 
+export const themeContext = createContext(null);
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
   return (
-    <>
-      <ToastContainer />
-      <WelcomeModal />
-      <HamburgerNav />
-      <Header />
-      <Profile />
-      <About />
-      <Experience />
-      <Certificates />
-      <Projects />
-      <Contact />
-      <Footer />
-    </>
+    <themeContext.Provider value={{ theme, toggleTheme }}>
+      <div className="app" id={theme}>
+        <ToastContainer />
+        <WelcomeModal />
+        <HamburgerNav />
+        <Header />
+        <Profile />
+        <About />
+        <Experience />
+        <Certificates />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
+    </themeContext.Provider>
   );
 }
 

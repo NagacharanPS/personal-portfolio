@@ -9,3 +9,8 @@
   cursor: pointer;
   opacity: 0.7;
 }
+
+#dark .arrow-icon {
+  background-color: white;
+  border-radius: 10px;
+}

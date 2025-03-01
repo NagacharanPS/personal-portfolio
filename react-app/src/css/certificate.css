@@ -23,6 +23,11 @@
   overflow: hidden;
 }
 
+#dark #certifications h1,
+#dark #certifications p {
+  color: white;
+}
+
 .certificates-typing-visible {
   animation: typing 6s steps(40, end) forwards;
 }
@@ -50,6 +55,12 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+}
+
+#dark .certificates-container-wrapper .left-arrow,
+.right-arrow {
+  background-color: white;
+  border-radius: 50%;
 }
 
 .certificates-container {
@@ -106,10 +117,20 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+#dark .pagination button {
+  background-color: white;
+  border: none;
+}
+
 .pagination button.active {
   background-color: #6aaf08;
   color: white;
-  /* border-color: #6aaf08; */
+  border: none;
+}
+
+#dark .pagination button.active {
+  background-color: #6aaf08;
+  color: white;
   border: none;
 }
 
